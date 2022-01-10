@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/b_alfa"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orden Alfabetico" />
+    <Button
+        android:id="@+id/b_long"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orden longitud" />
+    <Button
+        android:id="@+id/b_aleatorio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Orden aleatorio" />
+    <Button
+        android:id="@+id/b_iniciar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Iniciar Juego" />
+    <Button
+        android:id="@+id/b_descubir_letra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:text="Descubrir letra" />
+    <TextView
+        android:id="@+id/tv_asteriscos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        />
+</LinearLayout>
