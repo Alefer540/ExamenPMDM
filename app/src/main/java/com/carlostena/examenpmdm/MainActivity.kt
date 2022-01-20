@@ -11,6 +11,9 @@ class MainActivity : AppCompatActivity() {
 
     var lista = listOf("Amarillo", "Verde", "Rojo")
     var listaOrdenada = listOf<String>()
+    var palabraActual = 0
+    var caracterActual = 0
+
     private lateinit var binding : ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,13 +47,28 @@ class MainActivity : AppCompatActivity() {
                 binding.bDescubirLetra.visibility = View.VISIBLE
                 binding.tvAsteriscos.visibility = View.VISIBLE
                 binding.tvAsteriscos.text = obtenerAsteriscos(listaOrdenada[0])
+                palabraActual = 0
+                caracterActual = 0
             }
         }
 
         binding.bDescubirLetra.setOnClickListener {
-            binding.tvAsteriscos.text = obtenerAsteriscos(listaOrdenada[0], 4)
-            // TODO: Saber que palabra estamos mostrando.
-            // TODO: Saber que letra estamos mostrando.
+            caracterActual++
+            if (caracterActual > listaOrdenada[palabraActual].length ) {
+                palabraActual++
+                caracterActual = 0
+                if (palabraActual >= listaOrdenada.size) {
+                    binding.tvAsteriscos.text = ""
+                    binding.bAlfa.visibility = View.VISIBLE
+                    binding.bLong.visibility = View.VISIBLE
+                    binding.bAleatorio.visibility = View.VISIBLE
+                    binding.bDescubirLetra.visibility = View.GONE
+                    return@setOnClickListener
+                }
+            }
+
+
+            binding.tvAsteriscos.text = obtenerAsteriscos(listaOrdenada[palabraActual], caracterActual)
         }
 
     }
